@@ -6,11 +6,8 @@ public class CarExec_Chapter15 {
 		// Carインスタンス化
 		Car_Chapter15 myCar = new Car_Chapter15 ();
 
-		// ギア3に変更
-		int speed = myCar.gearChange(3);
-		System.out.println( "速度：" + speed );
-		
-		// 現在の速度を表示（runメソッドの呼び出し）
-		myCar.run();
+		// runメソッドの呼び出し（速度を表示）
+		myCar.gearChange(3);	// ギアを「3」に変更
+		myCar.run();            // ギア切り替え後の状態を表示
 	}
 }

@@ -3,45 +3,23 @@ package kadai_015;
 public class Car_Chapter15 {
 
 		// フィールド（内部データ）
-			private int gear  = 0;	// ギア
-			private int speed = 0;	// 速度
+		private int gear  = 0;	// ギア
+		private int speed = 0;	// 速度
 			
+		// コンストラクタ(初期値の指定)
+		public Car_Chapter15() {		// 修正点①：gearとspeedの値を初期化
+			gear  = 1;	// 初期ギア
+			speed = 10;	// 初期速度
+		}
 		
-		// 引数なしコンストラクター
-			public Car_Chapter15() {
+		// メソッド①（ギアを変更して速度に反映 (変更後のギア数×10で加速) ）
+		public void gearChange ( int afterGear ) {
+			this.speed = afterGear * 10;
+			System.out.println("ギア" + gear + "から" + afterGear + "に切り替えました");	// 修正点②：ギア変更時のメッセージ追記
 		}
-		// コンストラクタ（初期化処理）
-//		public Car_Chapter15 ( int gear, int speed ) {
-//			this.gear = gear;
-//			this.speed = speed;　
-			
-//			System.out.println ( "現在のギアは" + this.gear );
-//			System.out.println ( "現在の速度は" + this.speed );
-//		}
-
-		// メソッド①（ギアを変更して対応する指定した速度で返す）
-		public int gearChange ( int afterGear ) {
-			this.gear = afterGear;
-			// ギアによって速度を変化させる
-			switch ( gear ) {
-			case 1 : speed = 10;
-			break;
-			case 2 : speed = 20;
-			break;
-			case 3 : speed = 30;
-			break;
-			case 4 : speed = 40;
-			break;
-			case 5 : speed = 50;
-			break;
-			default: speed = 10;	// 無効なギアは速度10
-			break;
-			}
-			return speed;
-		}
-				
-		// メソッド②（現在のギアに応じた速度を表示する）
-		public void run () {
-			System.out.print( "現在のギア：" + gear + "、速度：" + speed );
+		
+		// メソッド②（切り替え後のギアに応じた速度を表示する）
+		public void run ( ) {
+			System.out.print(  "速度は時速：" + speed + "kmです。" );		// 修正点③：速度表示のメッセージ追記
 		}
 	}
