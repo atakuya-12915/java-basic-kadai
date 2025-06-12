@@ -41,7 +41,7 @@ public class Car_Chapter15 {
 		}
 				
 		// メソッド②（現在のギアに応じた速度を表示する）
-		public void run {
+		public void run () {
 			System.out.print( "現在のギア：" + gear + "、速度：" + speed );
 		}
 	}
